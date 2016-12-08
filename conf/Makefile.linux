@@ -1,0 +1,23 @@
+#=======================================================================
+# DEFINE LINUX SPECIFIC SETTINGS
+#=======================================================================
+#  Configurable environment variables:
+#    - GFRAME_LIBS: Path to libGFraMe.so & libGFraMe_dbg.so
+#    - CC: Compiler (default: gcc)
+#    - ASSETS_SYMLINK: Path were the assets should be symlink'ed
+
+DIRLIST := $(DIRLIST) bin/Linux_release
+DIRLIST := $(DIRLIST) bin/Linux_debug
+DIRLIST := $(DIRLIST) obj/Linux_release
+DIRLIST := $(DIRLIST) obj/Linux_debug
+DIRLIST := $(DIRLIST) $(SUBDIRLIST:%=obj/Linux_release/%)
+DIRLIST := $(DIRLIST) $(SUBDIRLIST:%=obj/Linux_debug/%)
+
+ifeq ($(OS), Linux)
+  GFRAME_LIBS ?= /usr/lib/GFraMe
+  CC ?= gcc
+  ASSETS_SYMLINK ?= bin/Linux_debug/assets
+
+  CFLAGS := $(CFLAGS) -fPIC
+endif
+

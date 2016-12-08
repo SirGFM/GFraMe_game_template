@@ -4,6 +4,9 @@
 *.obj
 *.elf
 
+# Dependency rules
+*.d
+
 # Precompiled Headers
 *.gch
 *.pch
@@ -37,6 +40,7 @@ bin/*
 *.ase
 *.wav
 *.gif
+promo/*
 
 # Log files
 *.log
