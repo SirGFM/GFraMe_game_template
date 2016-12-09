@@ -76,10 +76,10 @@ Finally, uncomment line 38 of the Makefile.
 For better results, create a file with 4 layers. Those should be (from top-most
 to bottom):
 
-layer_0: 256x256
-layer_1: 48x48
-layer_2: 32x32
-layer_3: 16x16
+* layer_0: 256x256
+* layer_1: 48x48
+* layer_2: 32x32
+* layer_3: 16x16
 
 Then, layer_1 may be created by scaling layer_0 by a factor of 3 and layer_0 by
 scaling layer_2 by 8.
